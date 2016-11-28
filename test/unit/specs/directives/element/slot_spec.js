@@ -34,7 +34,6 @@ describe('Slot Distribution', function () {
 
   it('no template auto content', function () {
     el.innerHTML = '<p>foo</p>'
-    options._asComponent = true
     mount()
     expect(el.firstChild.tagName).toBe('P')
     expect(el.firstChild.textContent).toBe('foo')
