@@ -346,12 +346,11 @@ describe('Observer', function () {
     var ob = observe(arr)
     var dep = ob.dep
     spyOn(dep, 'notify')
-    // remove by identity, not in array
+    // remove by identity
     arr.$remove(obj1)
     expect(arr.length).toBe(1)
     expect(arr[0]).toBe(obj2)
     expect(dep.notify.calls.count()).toBe(1)
-    // remove by identity, in array
     arr.$remove(obj2)
     expect(arr.length).toBe(0)
     expect(dep.notify.calls.count()).toBe(2)
